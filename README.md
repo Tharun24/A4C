@@ -31,4 +31,4 @@ sh _train.sh
 
 ### Configuration
 
-Each of these folders has Config.py file where we can specify the game_name, step_size, switching_time can be configured 
+Each of these folders has Config.py file where we can specify the game_name, step_size, switching_time, etc.
