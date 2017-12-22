@@ -129,7 +129,7 @@ class Config:
     STAT_ROLLING_MEAN_WINDOW = 1000
 
     # Results filename
-    RESULTS_FILENAME = 'qbert_ga3c.txt'
+    RESULTS_FILENAME = 'qbert_ga3c.txt' #  pong/qbert/spaceinvaders/beamrider
     # Network checkpoint name
     NETWORK_NAME = 'network'
 

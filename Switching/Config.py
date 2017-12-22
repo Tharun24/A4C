@@ -34,7 +34,7 @@ class Config:
     # Game configuration
 
     # Name of the game, with version (e.g. PongDeterministic-v0)
-    ATARI_GAME = 'QbertDeterministic-v0'
+    ATARI_GAME = 'QbertDeterministic-v0'  # Pong/Qbert/SpaceInvaders/BeamRider
 
     # Enable to see the trained agent in action
     PLAY_MODE = False
@@ -45,13 +45,13 @@ class Config:
     # If 0, the latest checkpoint is loaded
     LOAD_EPISODE = 0
 
-    meta_size = 2
-
+    meta_size = 2 # aka step_size
     begin_time = time.time()
     switching_time = 9000 #For Pong, Qbert and SpaceInvaders, 9000 seconds is the best setting. For Beamrider, 18000 is the best 
     decay_parameter = 1e-3
     temp = np.array(range(-switching_time,72000-switching_time))
     prob_array = 1/(1+np.exp(decay_parameter*temp))
+    
     #########################################################################
     # Number of agents, predictors, trainers and other system settings
     
@@ -140,7 +140,7 @@ class Config:
     STAT_ROLLING_MEAN_WINDOW = 1000
 
     # Results filename
-    RESULTS_FILENAME = 'qbert_a4c.txt'
+    RESULTS_FILENAME = 'qbert_a4c.txt' # pong/qbert/spaceinvaders/beamrider
     # Network checkpoint name
     NETWORK_NAME = 'network'
 
