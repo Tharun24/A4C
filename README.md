@@ -22,10 +22,13 @@ If you find the idea useful, please cite
 ### Usage
 
 The repository contains two folders, one for the  baseline GA3C and the other for Switching version of A4C. To run the code, please change
-
 your directory to either of these and run:
 
 ```
 sh _clean.sh
 sh _train.sh
 ```
+
+### Configuration
+
+Each of these folders has Config.py file where we can specify the game_name, step_size, switching_time can be configured 
