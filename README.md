@@ -21,7 +21,7 @@ If you find the idea useful, please cite
 
 ### Usage
 
-The repository contains two folders, one for the  baseline GA3C and the other for Switching version of A4C. To run the code, please change
+The repository contains two folders, one for the  baseline GA3C and the other for Switching version of A4C. The other 2 variants **Dependent Updating(DU)** and **Indpenednt Updating(IU)** can be obtained by tweaking **Switching**. The code structure is essentially similar to [GA3C](https://github.com/NVlabs/GA3C) with critical differences in **Config.py, ProcessAgent.py, GameManager.py** and **Environment.py**. To run the A4C code, please change
 your directory to either of these and run:
 
 ```
@@ -31,4 +31,15 @@ sh _train.sh
 
 ### Configuration
 
-Each of these folders has Config.py file where we can specify the game_name, step_size, switching_time, etc.
+The folder **Switching** has the file **Config.py** with the following chunk of code:
+
+```
+meta_size = 2 # aka step_size
+begin_time = time.time()
+switching_time = 9000 
+decay_parameter = 1e-3
+```
+
+Here, **meta_size** is the max length of multi-step actions. By default, we use upto 2-step actions.
+
+**switching_time** is the time after which we switch(in seconds). This should roughly be the time when starts to decay. 
