@@ -21,7 +21,7 @@ If you find the idea useful, please cite
 
 ### Usage
 
-The repository contains two folders, one for the  baseline *GA3C* and the other for *Switching* version of A4C. The other 2 variants *Dependent Updating(DU)* and *Indpenednt Updating(IU)* can be obtained by tweaking the *switching_time* in *Config.py* in the folder *Switching*. If switching time is set very high(beyond 20 hrs = 72000 seconds), it performs *DU*, and if we set the *switching_time* to 0, it performs *IU*. The code structure is essentially similar to [GA3C](https://github.com/NVlabs/GA3C) with critical differences in *Config.py, ProcessAgent.py, GameManager.py* and *Environment.py* . We use the same Network Architecture and Optimizer as GA3C. To run the A4C code, please change your directory to *Switching* and run:
+The repository contains two folders, one for the  baseline *GA3C* and the other for *Switching* version of A4C. The other 2 variants *Dependent Updating(DU)* and *Indpenednt Updating(IU)* can be obtained by tweaking the *switching_time* in *Config.py* in the folder *Switching*. If switching time is set very high(beyond 20 hrs = 72000 seconds), it performs *DU*, and if we set the *switching_time* to 0, it performs *IU*. The code structure is essentially similar to [GA3C](https://github.com/NVlabs/GA3C) with critical differences in *Config.py, ProcessAgent.py, GameManager.py* and *Environment.py* . We use the same Network Architecture(16 conv layers with size 8*8 - 32 cond layers with size 4*4 - FC layer with 256 units) and Optimizer as GA3C. To run the A4C code, please change your directory to *Switching* and run:
 
 ```
 sh _clean.sh
