@@ -6,7 +6,7 @@ FMT_time = '%H:%M:%S'
 def moving_average(arr,length):
     return np.array([np.mean(arr[i-length:i]) for i in range(length,len(arr))])
 
-game_name = 'qbert' # pong/qbert/spaceinvaders/beamrider
+game_name = 'pong' # pong/qbert/spaceinvaders/beamrider
 
 def diff(start_time,end_time,date_diff):
     if end_time>start_time:
@@ -18,7 +18,7 @@ def diff(start_time,end_time,date_diff):
 
 
 #############################################   GA3C   ##############################################################
-data = np.loadtxt('{}_ga3c.txt'.format(game_name), dtype=str,delimiter='\n')
+data = np.loadtxt('GA3C/{}_ga3c.txt'.format(game_name), dtype=str,delimiter='\n')
 all_dates = np.array([itm.split()[0] for itm in data])
 all_date_diff = np.array([datetime.strptime(itm, FMT_date) - datetime.strptime(all_dates[0], FMT_date) for itm in all_dates])
 all_time = np.array([itm.split()[1][:-1] for itm in data])
@@ -28,7 +28,7 @@ r_mean1 = moving_average(reward1,1000)
 idx1 = all_diff[1000:]
 
 #############################################   Switching   ##############################################################
-data = np.loadtxt('{}_a4c.txt'.format(game_name), dtype=str,delimiter='\n')
+data = np.loadtxt('Switching/{}_a4c.txt'.format(game_name), dtype=str,delimiter='\n')
 all_dates = np.array([itm.split()[0] for itm in data])
 all_date_diff = np.array([datetime.strptime(itm, FMT_date) - datetime.strptime(all_dates[0], FMT_date) for itm in all_dates])
 all_time = np.array([itm.split()[1][:-1] for itm in data])
